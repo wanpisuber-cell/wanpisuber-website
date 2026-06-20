@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+	<title>PNG Ride | Premium Transport • Port Moresby</title>
+	<!-- Font Awesome 6 -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<!-- Google Fonts for classic elegance -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+<style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #fcf9f2;
+      color: #2c2c2c;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, .classic-font {
+      font-family: 'Playfair Display', 'Times New Roman', serif;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Gold & Dark Classic Palette */
+    :root {
+      --gold: #c9a43b;
+      --gold-light: #e2c87c;
+      --dark: #1e1e1e;
+      --cream: #fdf8ed;
+      --soft-white: #ffffff;
+      --charcoal: #2d2d2d;
+      --muted-gold: #b4943c;
+    }
+
+    /* Header - refined & timeless */
+    header {
+      background: var(--soft-white);
+      padding: 1rem 0;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid #efe2c6;
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo i {
+      font-size: 2.4rem;
+      color: var(--gold);
+      text-shadow: 0 2px 5px rgba(201,164,59,0.2);
+    }
+
+    .logo span {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--dark);
+    }
+
+    .logo .png-badge {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      background: var(--gold);
+      color: white;
+      padding: 2px 10px;
+      border-radius: 20px;
+      margin-left: 6px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2.2rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    nav a {
+      color: #3a3a3a;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: var(--gold);
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .btn-classic {
+      background: transparent;
+      border: 2px solid var(--gold);
+      color: var(--dark);
+      padding: 0.7rem 2rem;
+      border-radius: 40px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 0.3px;
+    }
+
+    .btn-classic:hover {
+      background: var(--gold);
+      color: white;
+      border-color: var(--gold);
+      box-shadow: 0 8px 18px rgba(201,164,59,0.25);
+      transform: translateY(-2px);
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      border: 2px solid var(--gold);
+      color: white;
+      padding: 0.8rem 2.2rem;
+      border-radius: 40px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: 0.3s;
+      box-shadow: 0 10px 20px rgba(201,164,59,0.2);
+    }
+
+    .btn-gold:hover {
+      background: #b48b2e;
+      border-color: #b48b2e;
+      box-shadow: 0 14px 24px rgba(180,139,46,0.3);
+      transform: translateY(-2px);
+    }
+
+    /* Hero - classic ambiance */
+    .hero {
+      background: linear-gradient(105deg, #fef9ef 0%, #faf3e0 100%);
+      padding: 5rem 0;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid #e7d7b0;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      right: -50px;
+      top: -50px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(201,164,59,0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-text {
+      flex: 1 1 500px;
+    }
+
+    .hero-text h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+      color: #1c1c1c;
+      margin-bottom: 1.5rem;
+    }
+
+    .accent-text {
+      color: var(--gold);
+      font-style: italic;
+      border-bottom: 3px solid var(--gold-light);
+      display: inline-block;
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: #4a4a4a;
+      max-width: 500px;
+    }
+
+    .local-badge-group {
+      display: flex;
+      gap: 1rem;
+      margin: 1.8rem 0;
+      flex-wrap: wrap;
+    }
+
+    .pill {
+      background: white;
+      padding: 0.5rem 1.4rem;
+      border-radius: 30px;
+      font-weight: 500;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid #efe2c6;
+      color: #3a3a3a;
+    }
+
+    .hero-image {
+      flex: 1 1 300px;
+      text-align: center;
+    }
+
+    .hero-image i {
+      font-size: 13rem;
+      color: #d4af37;
+      filter: drop-shadow(0 20px 25px rgba(180,139,46,0.2));
+      opacity: 0.9;
+    }
+
+    /* Section styling */
+    .section {
+      padding: 5rem 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+      font-size: 2.8rem;
+      font-weight: 600;
+      color: #1e1e1e;
+      position: relative;
+      display: inline-block;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70px;
+      height: 3px;
+      background: var(--gold);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+    }
+
+    .service-card {
+      background: white;
+      padding: 2.2rem 1.8rem;
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.03);
+      transition: 0.3s;
+      text-align: center;
+      border: 1px solid #f0e7d2;
+      background: #fffdf7;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 25px 40px rgba(201,164,59,0.1);
+      border-color: var(--gold-light);
+    }
+
+    .service-card i {
+      font-size: 2.8rem;
+      color: var(--gold);
+      margin-bottom: 1.2rem;
+      background: #fef9ef;
+      padding: 18px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .service-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
+      color: #2b2b2b;
+    }
+
+    .info-row {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .info-box {
+      flex: 1 1 280px;
+      background: white;
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.03);
+      border-left: 5px solid var(--gold);
+      background: #fffdf7;
+    }
+
+    .faq-item {
+      background: white;
+      border-radius: 16px;
+      padding: 1.5rem 1.8rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+      border: 1px solid #f0e7d2;
+      transition: 0.2s;
+    }
+
+    .faq-item:hover {
+      border-color: var(--gold-light);
+    }
+
+    footer {
+      background: #1e1e1e;
+      color: #d4d4d4;
+      padding: 3.5rem 0 1.8rem;
+      margin-top: 2rem;
+      font-size: 0.95rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      border-top: 1px solid #3a3a3a;
+      padding-top: 1.8rem;
+      color: #a0a0a0;
+    }
+
+    a {
+      color: #c9a43b;
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      .hero-text h1 {
+        font-size: 2.6rem;
+      }
+      nav ul {
+        gap: 1.2rem;
+      }
+    }
+</style>
+  </head>
+  <body>
+	<header>
+	  <div class="container header-content">
+		<div class="logo">
+		  <i class="fas fa-crown"></i>
+		  <span>WANPIS<span class="png-badge">Uber Service</span></span>
+		</div>
+		<nav>
+		  <ul>
+			<li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+			<li><a href="#services"><i class="fas fa-car"></i> Services</a></li>
+			<li><a href="#info"><i class="fas fa-compass"></i> Travel Info</a></li>
+			<li><a href="#contact"><i class="fas fa-phone-alt"></i> Contact</a></li>
+		  </ul>
+		</nav>
+		<a href="#" class="btn-classic"><i class="fas fa-calendar-check"></i> Reserve</a>
+	  </div>
+	</header>
+
+	<main>
+	  <!-- Hero -->
+	  <section id="home" class="hero">
+		<div class="container hero-content">
+		  <div class="hero-text">
+			<h1>Your <span class="accent-text">premium ride</span><br>in Port Moresby</h1>
+			<p>Experience distinguished transport service exclusively in the capital. Blending local knowledge with international standards for every journey.</p>
+			<div class="local-badge-group">
+			  <div class="pill"><i class="fas fa-map-pin" style="color:#c9a43b;"></i> Port Moresby</div>
+			  <div class="pill"><i class="fas fa-globe" style="color:#c9a43b;"></i> Visitor Friendly</div>
+			  <div class="pill"><i class="fas fa-shield-alt" style="color:#c9a43b;"></i> Safe & Reliable</div>
+			</div>
+			<a href="#" class="btn-gold" style="margin-top: 0.5rem;"><i class="fas fa-mobile-alt"></i> Book Your Ride</a>
+		  </div>
+		  <div class="hero-image">
+			<img src="wanpis.jpg" alt="PNG Ride Transport" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+		  </div>
+		</div>
+	  </section>
+
+	  <!-- Services -->
+	  <section id="services" class="section">
+		<div class="container">
+		  <h2 class="section-title">Our Port Moresby Services</h2>
+		  <div class="services-grid">
+			<div class="service-card">
+			  <i class="fas fa-city"></i>
+			  <h3>City Transport</h3>
+			  <p>Elegant rides across Port Moresby — from Waigani to Ela Beach. Clean, air-conditioned vehicles.</p>
+			</div>
+			<div class="service-card">
+			  <i class="fas fa-plane-arrival"></i>
+			  <h3>Airport Transfers</h3>
+			  <p>Seamless pickups at Jacksons International Airport. Name board, luggage help, and punctual service.</p>
+			</div>
+			<div class="service-card">
+			  <i class="fas fa-building"></i>
+			  <h3>Business Travel</h3>
+			  <p>Corporate accounts for companies, NGOs, and government offices in NCD. Invoicing available.</p>
+			</div>
+			<div class="service-card">
+			  <i class="fas fa-umbrella-beach"></i>
+			  <h3>Visitor Tours</h3>
+			  <p>Bespoke half-day or full-day tours to Port Moresby Nature Park, Parliament House, and local markets.</p>
+			</div>
+		  </div>
+		</div>
+	  </section>
+
+	  <!-- Local & International Info -->
+	  <section id="info" class="section" style="background: #fdf8ed;">
+		<div class="container">
+		  <h2 class="section-title">Port Moresby Travel Information</h2>
+		  <div class="info-row">
+			<div class="info-box">
+			  <i class="fas fa-users" style="font-size: 2.2rem; color: #c9a43b; margin-bottom: 1rem;"></i>
+			  <h3 style="font-family: 'Playfair Display', serif;">For Our Local Guests</h3>
+			  <p><strong>Payment flexibility:</strong> BSP mobile banking, cash, or card in our premium vehicles.</p>
+			  <p style="margin-top: 0.8rem;"><strong>Service area:</strong> All NCD suburbs including Waigani, Gordons, Boroko, Town, and beyond.</p>
+			  <p style="margin-top: 0.8rem;"><strong>Local rates:</strong> Competitive pricing starting from PGK 18 within the city zone.</p>
+			</div>
+			<div class="info-box">
+			  <i class="fas fa-passport" style="font-size: 2.2rem; color: #c9a43b; margin-bottom: 1rem;"></i>
+			  <h3 style="font-family: 'Playfair Display', serif;">International Visitor Guide</h3>
+			  <p><strong>Arriving at POM:</strong> Jacksons International Airport. Our driver meets you at arrivals.</p>
+			  <p style="margin-top: 0.8rem;"><strong>Currency:</strong> Papua New Guinean Kina (PGK). Our app displays approximate USD fares.</p>
+			  <p style="margin-top: 0.8rem;"><strong>Connectivity:</strong> Digicel or Bmobile SIM available at the airport. English widely spoken.</p>
+			  <p style="margin-top: 0.8rem;"><strong>Safety tip:</strong> We recommend pre-booking all transport. All our rides are tracked and insured.</p>
+			</div>
+		  </div>
+		</div>
+	  </section>
+
+	  <!-- FAQ -->
+	  <section class="section">
+		<div class="container">
+		  <h2 class="section-title">Frequently Asked</h2>
+		  <div style="max-width: 800px; margin: 0 auto;">
+			<div class="faq-item">
+			  <h4><i class="fas fa-check-circle" style="color:#c9a43b;"></i> Do you operate outside Port Moresby?</h4>
+			  <p>We currently focus exclusively on Port Moresby and the National Capital District to ensure the highest service quality.</p>
+			</div>
+			<div class="faq-item">
+			  <h4><i class="fas fa-check-circle" style="color:#c9a43b;"></i> Can visitors book without a local phone number?</h4>
+			  <p>Yes. International travelers can reserve through our website, email, or WhatsApp using any country code.</p>
+			</div>
+			<div class="faq-item">
+			  <h4><i class="fas fa-check-circle" style="color:#c9a43b;"></i> What are your operating hours?</h4>
+			  <p>We operate 24/7 in Port Moresby, including late-night airport transfers and early morning business rides.</p>
+			</div>
+		  </div>
+		</div>
+	  </section>
+
+	  <!-- Contact / CTA -->
+	  <section id="contact" style="background: #1e1e1e; color: white; padding: 4rem 0; margin-top: 2rem;">
+		<div class="container" style="text-align: center;">
+		  <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 1rem;">Ride with confidence in Port Moresby</h2>
+		  <p style="margin-bottom: 2.5rem; color: #cccccc; max-width: 500px; margin-left: auto; margin-right: auto;">Contact our Port Moresby team or download the app for instant booking.</p>
+		  <div style="display: flex; gap: 1.2rem; justify-content: center; flex-wrap: wrap;">
+			<a href="#" class="btn-gold" style="background:white; color:#1e1e1e; border-color:white;"><i class="fab fa-google-play"></i> Google Play</a>
+			<a href="#" class="btn-gold" style="background:white; color:#1e1e1e; border-color:white;"><i class="fab fa-apple"></i> App Store</a>
+			<a href="tel:+67570000000" class="btn-gold"><i class="fas fa-phone-alt"></i> +675 7000 0000</a>
+		  </div>
+		</div>
+	  </section>
+	</main>
+
+	<footer>
+	  <div class="container">
+		<div class="footer-grid">
+		  <div>
+			<h4 style="font-family: 'Playfair Display', serif; color: #c9a43b;"><i class="fas fa-crown"></i> PNG Ride</h4>
+			<p>Premium transport exclusively in Port Moresby, Papua New Guinea. Founded on safety, elegance, and local hospitality.</p>
+		  </div>
+		  <div>
+			<h4>Explore</h4>
+			<ul style="list-style: none; padding:0; color:#b0b0b0;">
+			  <li><a href="#home">Home</a></li>
+			  <li><a href="#services">Services</a></li>
+			  <li><a href="#">Safety Pledge</a></li>
+			  <li><a href="#">Blog</a></li>
+			</ul>
+		  </div>
+		  <div>
+			<h4>Contact</h4>
+			<p><i class="fas fa-envelope"></i> guest@wanpisuberservice</p>
+			<p><i class="fas fa-phone"></i> +675 7000 0000</p>
+			<p><i class="fas fa-map-marker-alt"></i> Port Moresby, NCD</p>
+		  </div>
+		  <div>
+			<h4>Follow</h4>
+			<div style="display: flex; gap: 1.2rem; font-size: 1.4rem;">
+			  <a href="#"><i class="fab fa-facebook-f"></i></a>
+			  <a href="#"><i class="fab fa-instagram"></i></a>
+			  <a href="#"><i class="fab fa-whatsapp"></i></a>
+			</div>
+		  </div>
+		</div>
+		<div class="footer-bottom">
+		  <p>© 2025 WANPIS Uber Service — Port Moresby, Papua New Guinea. Crafted for the discerning traveler. <br><span style="font-style: italic;">“Lukim yu long Port Moresby” (See you in Port Moresby)</span></p>
+		</div>
+	  </div>
+	</footer>
+  </body>
+</html>
